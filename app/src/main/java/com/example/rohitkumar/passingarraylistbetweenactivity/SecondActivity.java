@@ -12,9 +12,6 @@ import java.util.List;
 
 public class SecondActivity extends AppCompatActivity {
 
-    private TextView mOutput;
-    private TextView mId;
-
     private static final String TAG = "SecondActivity";
     List<User> userList = new ArrayList<>();
 
@@ -23,8 +20,9 @@ public class SecondActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
-        mOutput = findViewById(R.id.textView);
-        mId = findViewById(R.id.id);
+        TextView mOutput = findViewById(R.id.textView);
+        TextView mId = findViewById(R.id.id);
+
 
 
         Bundle bundle = getIntent().getExtras();
@@ -36,13 +34,10 @@ public class SecondActivity extends AppCompatActivity {
         Log.e("null","null");
 
 
-
-
-
-
+        assert userList != null;
         for (User user : userList){
 
-            String id = user.getId().toString();
+            String id = user.getId();
 //            Log.d(TAG, "onCreate: " + user.getName());
 //            Toast.makeText(this, mId , Toast.LENGTH_SHORT).show();
             mOutput.append(user.getName() + "\n");
