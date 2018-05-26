@@ -24,18 +24,16 @@ public class SecondActivity extends AppCompatActivity {
         TextView mId = findViewById(R.id.id);
 
 
-
         Bundle bundle = getIntent().getExtras();
 
-        if(bundle!=null) {
+        if (bundle != null) {
             userList = (List<User>) bundle.getSerializable("user");
-        }
-        else
-        Log.e("null","null");
+        } else
+            Log.e("null", "null");
 
 
         assert userList != null;
-        for (User user : userList){
+        for (User user : userList) {
 
             String id = user.getId();
 //            Log.d(TAG, "onCreate: " + user.getName());
